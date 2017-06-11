@@ -1,0 +1,314 @@
+#add_namespace = md_balance_mod
+#
+# low_economic_mobilisation Demobilisation
+#country_event = {
+#	id = md_balance_mod.1
+#	title = md_balance_mod.1.t
+#	desc = md_balance_mod.1.d
+#	picture = GFX_report_event_stability
+#	
+#	#hidden = yes
+#
+#	trigger = {
+#		has_idea = low_economic_mobilisation
+#		NOT = {
+#			OR = {
+#				has_government = islamist
+#				has_government = fascist
+#				has_government = nationalist
+#				has_government = monarchist
+#				has_government = communist
+#				AND = {
+#					has_war = yes
+#					any_enemy_country = {
+#						ic_ratio = { 
+#							tag = ROOT 
+#							ratio > 0.20
+#						}
+#					}
+#				}
+#				has_defensive_war = yes
+#				threat > 0.25
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = md_balance_mod.1.a
+#	
+#		remove_ideas = low_economic_mobilisation
+#		add_ideas = civilian_economy
+#	}
+#}
+#
+# partial_economic_mobilisation Demobilisation
+#country_event = {
+#	id = md_balance_mod.2
+#	title = md_balance_mod.2.t
+#	desc = md_balance_mod.2.d
+#	picture = GFX_report_event_stability
+#	
+#	#hidden = yes
+#
+#	trigger = {
+#		has_idea = partial_economic_mobilisation
+#		NOT = {
+#			OR = {
+#				has_government = fascist
+#				has_government = nationalist
+#				has_government = monarchist
+#				has_government = communist
+#				AND = {
+#					has_war = yes
+#					any_enemy_country = {
+#						ic_ratio = { 
+#							tag = ROOT 
+#							ratio > 0.50
+#						}
+#					}
+#				}
+#				has_defensive_war = yes
+#				threat > 0.5
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = md_balance_mod.2.a
+#	
+#		remove_ideas = partial_economic_mobilisation
+#		add_ideas = civilian_economy
+#	}
+#}
+#
+# war_economy Demobilisation
+#country_event = {
+#	id = md_balance_mod.3
+#	title = md_balance_mod.3.t
+#	desc = md_balance_mod.3.d
+#	picture = GFX_report_event_stability
+#	
+#	#hidden = yes
+#
+#	trigger = {
+#		has_idea = war_economy
+#		NOT = {
+#			OR = {
+#				has_government = fascist
+#				custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
+#				AND = {
+#					has_war = yes
+#					any_enemy_country = {
+#						ic_ratio = { 
+#							tag = ROOT 
+#							ratio > 0.80
+#						}
+#					}
+#				}
+#				AND = {
+#					has_defensive_war = yes
+#					any_enemy_country = {
+#						ic_ratio = { 
+#							tag = ROOT 
+#							ratio > 0.40
+#						}
+#					}
+#				}
+#				threat > 0.75
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = md_balance_mod.3.a
+#	
+#		remove_ideas = war_economy
+#		add_ideas = civilian_economy
+#	}
+#}
+#
+# tot_economic_mobilisation Demobilisation
+#country_event = {
+#	id = md_balance_mod.4
+#	title = md_balance_mod.4.t
+#	desc = md_balance_mod.4.d
+#	picture = GFX_report_event_stability
+#	
+#	#hidden = yes
+#
+#	trigger = {
+#		has_idea = tot_economic_mobilisation
+#		NOT = {
+#			OR = {
+#				AND = {
+#					has_war = yes
+#					any_enemy_country = {
+#						ic_ratio = { 
+#							tag = ROOT 
+#							ratio > 1.5
+#						}
+#					}
+#				}
+#				AND = {
+#					has_defensive_war = yes
+#					any_enemy_country = {
+#						ic_ratio = { 
+#							tag = ROOT 
+#							ratio > 0.75
+#						}
+#					}
+#				}
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = md_balance_mod.4.a
+#	
+#		remove_ideas = tot_economic_mobilisation
+#		add_ideas = civilian_economy
+#	}
+#}
+#
+# extensive_conscription Demobilisation
+#country_event = {
+#	id = md_balance_mod.5
+#	title = md_balance_mod.5.t
+#	desc = md_balance_mod.5.d
+#	picture = GFX_report_event_stability
+#	
+#	#hidden = yes
+#
+#	trigger = {
+#		has_idea = extensive_conscription
+#		NOT = {
+#			OR = {
+#				threat > 0.3
+#				AND = {
+#					has_war = yes
+#					any_enemy_country = {
+#						ic_ratio = { 
+#							tag = ROOT 
+#							ratio > 0.25
+#						}
+#					}
+#				}
+#				has_defensive_war = yes
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = md_balance_mod.5.a
+#	
+#		remove_ideas = extensive_conscription
+#		add_ideas = limited_conscription
+#	}
+#}
+#
+#
+# service_by_requirement Demobilisation
+#country_event = {
+#	id = md_balance_mod.6
+#	title = md_balance_mod.6.t
+#	desc = md_balance_mod.6.d
+#	picture = GFX_report_event_stability
+#	
+#	#hidden = yes
+#
+#	trigger = {
+#		has_idea = service_by_requirement
+#		NOT = {
+#			OR = {
+#				has_defensive_war = yes
+#				AND = {
+#					has_war = yes
+#					any_enemy_country = {
+#						ic_ratio = { 
+#							tag = ROOT 
+#							ratio > 0.5
+#						}
+#					}
+#				}
+#				AND = {
+#					OR = {
+#						has_government = islamist
+#						has_government = fascist
+#						has_government = nationalist
+#						has_government = communist
+#					}
+#					threat > 0.7
+#				}
+#				threat > 0.95
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = md_balance_mod.6.a
+#	
+#		remove_ideas = service_by_requirement
+#		add_ideas = limited_conscription
+#	}
+#}
+#
+#
+# all_adults_serve Demobilisation
+#country_event = {
+#	id = md_balance_mod.7
+#	title = md_balance_mod.7.t
+#	desc = md_balance_mod.7.d
+#	picture = GFX_report_event_stability
+#	
+#	#hidden = yes
+#
+#	trigger = {
+#		has_idea = all_adults_serve
+#		NOT = {
+#			has_war = yes
+#			any_enemy_country = {
+#				ic_ratio = { 
+#					tag = ROOT 
+#					ratio > 0.75
+#				}
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = md_balance_mod.7.a
+#	
+#		remove_ideas = all_adults_serve
+#		add_ideas = limited_conscription
+#	}
+#}
+#
+# all_adults_serve Demobilisation
+#country_event = {
+#	id = md_balance_mod.7
+#	title = md_balance_mod.7.t
+#	desc = md_balance_mod.7.d
+#	picture = GFX_report_event_stability
+#	
+#	#hidden = yes
+#
+#	trigger = {
+#		has_idea = all_adults_serve
+#		NOT = {
+#			has_war = yes
+#			any_enemy_country = {
+#				ic_ratio = { 
+#					tag = ROOT 
+#					ratio > 0.75
+#				}
+#			}
+#		}
+#	}
+#
+#	option = {
+#		name = md_balance_mod.7.a
+#	
+#		remove_ideas = all_adults_serve
+#		add_ideas = limited_conscription
+#	}
+#}
